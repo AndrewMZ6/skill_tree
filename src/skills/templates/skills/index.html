@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<p>{{ skills.skill_name }}</p>
+	<p>{{ skills.skill_verbose }}</p>
+	<p>{{ skills.knowledge_count }}</p>
+	{% if negative_knowledge_count_message %}
+	<h1>{{ negative_knowledge_count_message }}</h1>
+	{% endif %}
+	
+	<a href="{% url 'skills:add' skills.id %}"><button type="button">Add knowledge point</button></a>
+	<a href="{% url 'skills:reduce' skills.id %}"><button type="button">Reduce knowledge point</button></a>
+</body>
+</html>
